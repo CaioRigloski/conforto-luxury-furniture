@@ -1,0 +1,139 @@
+/* STYLES */
+
+.container {
+  /* Variables */
+  --lightning-width: 13.75rem;
+  --lightning-height: 15.688rem;
+  --chairs-width: 25.313rem;
+  --chairs-height: 28.438rem;
+  --cabinets-width: 20rem;
+  --cabinets-height: 22.875rem;
+  --beds-width: 38.563rem;
+  --beds-height: 12rem;
+  --tables-width: 28.688rem;
+  --tables-height: 22.875rem;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 5px 10px #00000040;
+}
+
+.container:hover > div {
+  border: 0.938rem solid var(--background-light-blue);
+  transition: ease-in-out 0.2s;
+}
+
+.container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.938rem solid var(--background-dark-blue);
+  position: relative;
+}
+
+/* STYLES FOR CONTAINER FOR EACH CATEGORY  */
+
+/* Lightning */
+.container.lightning {
+  grid-area: lightning;
+  width: var(--lightning-width);
+  height: var(--lightning-height);
+}
+
+.container.lightning > div {
+  width: calc(var(--lightning-width) - 0.438rem);
+  height: calc(var(--lightning-height) - 0.438rem);
+}
+
+/* Chairs */
+.container.chairs {
+  grid-area: chairs;
+  width: var(--chairs-width);
+  height: var(--chairs-height);
+  align-self: end;
+}
+
+.container.chairs > div {
+  width: calc(var(--chairs-width) - 0.438rem);
+  height: calc(var(--chairs-height) - 0.438rem);
+}
+
+/* Cabinets */
+.container.cabinets {
+  grid-area: cabinets;
+  width: var(--cabinets-width);
+  height: var(--cabinets-height);
+}
+
+.container.cabinets > div {
+  width: calc(var(--cabinets-width) - 0.438rem);
+  height: calc(var(--cabinets-height) - 0.438rem);
+}
+
+/* Beds */
+.container.beds {
+  grid-area: beds;
+  width: var(--beds-width);
+  height: var(--beds-height);
+  align-self: flex-start;
+  justify-self: end;
+}
+
+.container.beds > div {
+  width: calc(var(--beds-width) - 0.438rem);
+  height: calc(var(--beds-height) - 0.438rem);
+}
+
+/* Tables */
+.container.tables {
+  grid-area: tables;
+  width: var(--tables-width);
+  height: var(--tables-height);
+}
+
+.container.tables > div {
+  width: calc(var(--tables-width) - 0.438rem);
+  height: calc(var(--tables-height) - 0.438rem);
+}
+
+ /* STYLES FOR IMAGES */
+
+ /* Global */
+.imageWrap {
+  position: relative;
+}
+
+.imageWrap > img {
+  object-fit: contain;
+}
+
+.container.lightning > div > .imageWrap {
+  width: 8.938rem;
+  height: 8.938rem;
+}
+
+.container.chairs > div > .imageWrap {
+  width: 21.063rem;
+  height: 22.688rem;
+}
+
+.container.cabinets > div > .imageWrap {
+  width: 9.688rem;
+  height: 16.625rem;
+}
+
+.container.beds > div > .imageWrap {
+  width: 25.938rem;
+  height: 25.938rem;
+}
+
+.container.tables > div > .imageWrap {
+  width: 23.063rem;
+  height: 12.875rem;
+}

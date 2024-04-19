@@ -1,0 +1,55 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: calc(50% + (19.188rem / 2)) auto;
+  align-items: flex-end;
+  height: 100vh;
+  width: 32.25rem;
+  background-color: var(--background-transparent-white);
+  justify-self: flex-end;
+}
+
+.products {
+  height: fit-content;
+  width: 11.75rem;
+  box-sizing: content-box;
+  padding: 2rem;
+  justify-self: end;
+}
+
+.products > p {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.products > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+}
+
+.products > div > p {
+  margin-left: 1rem;
+}
+
+.icon {
+  position: relative;
+  width: 3.75rem;
+  height: 3.75rem;
+  justify-self: flex-end;
+}
+
+.catalogBtn {
+  width: 9.125rem;
+  border: none;
+  border-radius: 6.25rem;
+  height: 2.813rem;
+  background-color: var(--background-yellow-90);
+  color: white;
+  justify-self: end;
+  align-self: flex-end;
+  justify-self: center;
+  position: relative;
+  bottom: 5.125rem;
+}

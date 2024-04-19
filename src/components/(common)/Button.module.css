@@ -1,0 +1,57 @@
+/* STYLES */
+
+.button {
+  border: none;
+  background-color: var(--background-yellow-90);
+  width: fit-content;
+  height: 1.438rem;
+  border-radius: 6.25rem;
+  cursor: pointer;
+}
+
+/* STYLES FOR BUTTON IN HOME PAGE */
+
+.home {
+  width: 9.125rem;
+  height: 2.813rem;
+  color: white;
+  justify-self: end;
+  align-self: flex-end;
+  justify-self: center;
+  position: relative;
+  bottom: 5.125rem;
+}
+
+/* STYLES FOR BUTTON IN CATALOG PAGE */
+
+.catalog {
+  /* Variables */
+  --absolute-margin: 0.875rem;
+  font-size: 0.688rem;
+  color: var(--light-gray-color);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  position: absolute;
+}
+
+.catalog.lightning, .catalog.beds {
+  top: var(--absolute-margin);
+  left: var(--absolute-margin);
+}
+
+.catalog.chairs {
+  top: var(--absolute-margin);
+  right: var(--absolute-margin);
+}
+
+.catalog.cabinets {
+  bottom: var(--absolute-margin);
+  left: var(--absolute-margin);
+}
+
+.catalog.tables {
+  bottom: var(--absolute-margin);
+  right: var(--absolute-margin);
+}

@@ -1,0 +1,134 @@
+/* KEYFRAMES */
+
+@keyframes resize {
+  from {
+    width: var(--productOpenedDimensions);
+    height: var(--productOpenedDimensions);
+  }
+  to {
+    display: inline-flex;
+    width: fit-content;
+    height: fit-content;
+  }
+}
+
+@keyframes relocate {
+  50% {
+    transform: translateX(var(--productOpenedDimensions));
+  }
+  100% {
+    transform: translateY(calc(var(--productOpenedDimensions) * -1)) translateX(var(--productOpenedDimensions));
+  }
+}
+
+@keyframes rightToCenter {
+  to {
+    transform: translateX(-25rem);
+  }
+}
+
+/* STYLES */
+
+.card {
+  /* variables */
+  --productOpenedDimensions: 25rem;
+  --delayAnimation: 1s;
+  
+  width: 15.625rem;
+  height: 19.688rem;
+  font-family: var(--montserrat-font-family);
+  opacity: 100%;
+  transition: opacity 0.5s 0.2s;
+}
+
+.imageWrap {
+  position: relative;
+  width: 15.625rem;
+  height: 15.625rem;
+}
+
+.imageWrap > img {
+  object-fit: cover;
+}
+
+.productInfoBox {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  width: 15.625rem;
+  height: 4.063rem;
+  background-color: var(--background-grey);
+  text-align: center;
+  align-items: center;
+}
+
+.productInfoBox > h2 {
+  font-size: var(--default-font-size);
+  letter-spacing: 0.2rem;
+  font-weight: normal;
+}
+
+.productInfoBox > p {
+  display: none;
+}
+
+.productInfoBox > button {
+  display: none;
+}
+
+
+/* ***** STYLES FOR SELECTED PRODUCT ***** */
+
+.card.selected {
+  animation: resize 0s calc(var(--delayAnimation) + 1s) forwards;
+}
+
+/* Odd index (right column items) must be centered until display set to inline-flex to prevent flickering*/
+.card.selected.isOdd {
+  animation: rightToCenter 2s normal, resize 0s calc(var(--delayAnimation) + 1s) forwards;
+}
+
+.card.selected > .imageWrap {
+  width: var(--productOpenedDimensions);
+  height: var(--productOpenedDimensions);
+  transition: ease 1s 0.5s;
+}
+
+.card.selected > .productInfoBox {
+  grid-template-rows: 4.375rem auto 5rem;
+  width: var(--productOpenedDimensions);
+  height: var(--productOpenedDimensions);
+  background-color: var(--background-light-blue);
+  transition: ease 1s 0.5s;
+  animation: relocate 1s ease var(--delayAnimation) normal;
+  justify-content: center;
+  justify-items: center;
+  overflow-y: hidden;
+}
+
+.card.selected > .productInfoBox > p {
+  display: block;
+  width: 15.625rem;
+}
+
+/* ***** STYLES FOR HIDDEN PRODUCTS ***** */
+
+.card.hidden {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: 0.5s ease;
+}
+
+/* Prevents clickable images caused by absolute position from <Next.Image> */
+.card.hidden > .imageWrap {
+  width: 0;
+  transition: 0.5s ease;
+}
+
+/* ***** STYLES WHEN CLOSING A PRODUCT ***** */
+
+.card.selected.closed {
+  opacity: 0;
+  transition: 1s;
+}

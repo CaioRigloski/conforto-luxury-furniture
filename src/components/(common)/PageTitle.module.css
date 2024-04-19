@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  width: fit-content;
+  top: 3.375rem;
+  right: 15.625rem;
+}
+
+.container > h1 {
+  font-family: var(--montserrat-font-family);
+  font-weight: 600;
+}
