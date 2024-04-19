@@ -40,6 +40,7 @@
 }
 
 .background {
+  display: flex;
   position: absolute;
   width: 100vw;
   height: 50vh;
@@ -47,6 +48,13 @@
   bottom: 0;
   right: 0;
   z-index: -1;
+}
+
+.background::after {
+  content: "";
+  width: 45%;
+  height: 100%;
+  background-color: var(--background-transparent-white);
 }
 
 .productsContainer {
@@ -63,26 +71,25 @@
   margin: auto;
   width: 80vw;
   height: 100vh;
-  overflow-y: scroll;
-}
-
-.productsContainer::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
 }
 
 .productBox {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: max-content;
-  width: fit-content;
-  height: 40.376rem;
-  max-height: 40.376rem;
-  max-width: 50rem;
-  row-gap: 6.25rem;
+  width: calc(15.625rem * 2 + 3.125rem);
+  height: calc(19.688rem * 2 + 3.125rem);
+  row-gap: 3.125rem;
   column-gap: 3.125rem;
+  overflow-y: scroll;
 }
+
+.productBox::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
 
 .productsSection.productIsSelected > .background {
   animation: resizeBackground 2s ease forwards;
@@ -100,6 +107,7 @@
   align-items: unset;
   row-gap: 0;
   column-gap: 0;
+  overflow-y: visible;
   transition: 1s ease 0.5s;
 }
 

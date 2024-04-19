@@ -117,12 +117,18 @@
   opacity: 0;
   width: 0;
   height: 0;
-  transition: 0.5s ease;
+  transition: 
+    opacity 0.2s,
+    width 0.5s,
+    height 0.5s,
+    ease
+  ;
 }
 
 /* Prevents clickable images caused by absolute position from <Next.Image> */
 .card.hidden > .imageWrap {
   width: 0;
+  height: 0;
   transition: 0.5s ease;
 }
 
@@ -130,5 +136,5 @@
 
 .card.selected.closed {
   opacity: 0;
-  transition: 1s;
+  transition: 0.5s;
 }
