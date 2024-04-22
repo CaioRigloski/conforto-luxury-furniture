@@ -1,10 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ProductCard from "./ProductCard";
 import styles from "./Products.module.css"
+import PageTitle from "../(common)/PageTitle";
+import scrollDown from "../../../public/svg/scroll-down.svg"
+import Image from "next/image";
 
-export default function Products() {
+export default function Products(props: { category: string }) {
   const [ selectedProductId, setSelectedProductId ] = useState<number>(-1)
   const [ closedProductId, setClosedProductId ] = useState<number>(-1)
+  const [ displayScrollDown, setDisplayScrollDown ] = useState<boolean>(true)
+
+  const ref = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    /* To remove mouse scroll down svg */
+    ref.current?.addEventListener('scroll', (e) => {
+      setDisplayScrollDown(false)
+    })
+
+    ref.current?.removeEventListener('scroll', () => {})
+  }, [])
+
 
   const products = [
     {
@@ -57,7 +73,7 @@ export default function Products() {
       return ''
     }
   }
-  
+
   function closeProductWithDelay(id: number) {
     setClosedProductId(id)
     setTimeout(() => {
@@ -68,15 +84,17 @@ export default function Products() {
 
   return (
     <section className={`${styles.productsSection} ${checkIfProductIsSelected()} ${checkIfProductWasClosed()}`}>
+      <PageTitle title={props.category}  styleName="product" isHidden={selectedProductId >= 0}/>
       <div className={styles.background}/>
       <div className={styles.productsContainer}>
-        <div className={`${styles.productBox} ${selectedProductId >= 0 ? styles.expandProductBox : ''}`}>
+        <div ref={ref} className={`${styles.productBox} ${selectedProductId >= 0 ? styles.expandProductBox : ''}`}>
           {
             products.map(product => {
-              return <ProductCard key={product.id} isSelected={product.id === selectedProductId} isClosed={product.id === closedProductId} isHidden={selectedProductId != -1 && selectedProductId !== product.id} isOdd={product.id %2 > 0} onClick={() => setSelectedProductId(product.id)} closeOnClick={() => closeProductWithDelay(product.id)}/>
+              return <ProductCard key={product.id} isSelected={product.id === selectedProductId} isClosed={product.id === closedProductId} isHidden={selectedProductId != -1 && selectedProductId !== product.id} isOdd={product.id %2 > 0} onClick={() => {setSelectedProductId(product.id), setDisplayScrollDown(false)}} closeOnClick={() => closeProductWithDelay(product.id)}/>
             })
           }
         </div>
+        { displayScrollDown && <Image src={scrollDown} alt="Scroll Down Icon"/> }
       </div>
     </section>
   )

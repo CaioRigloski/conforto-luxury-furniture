@@ -55,3 +55,14 @@
   bottom: var(--absolute-margin);
   right: var(--absolute-margin);
 }
+
+/* STYLES FOR BUTTON IN PRODUCT PAGE */
+
+.product {
+  width: 9.125rem;
+  height: 2.813rem;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.3rem;
+}

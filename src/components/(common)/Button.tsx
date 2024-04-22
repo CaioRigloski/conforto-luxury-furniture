@@ -1,7 +1,7 @@
 import Router from "next/router"
 import styles from "./Button.module.css"
 
-export default function Button(props: { text: string, styleNames: Array<string>, href?: string}) {
+export default function Button(props: { text: string, styleNames: string[], href?: string}) {
 
   function redirect() {
     if(props.href)

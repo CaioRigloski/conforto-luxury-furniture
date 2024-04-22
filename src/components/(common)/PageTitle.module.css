@@ -5,10 +5,19 @@
   position: absolute;
   width: fit-content;
   top: 3.375rem;
-  right: 15.625rem;
+  left: calc(100vw - 15.625rem);
 }
 
 .container > h1 {
   font-family: var(--montserrat-font-family);
   font-weight: 600;
+}
+
+.container.product {
+  color: black;
+}
+
+.hidden {
+  opacity: 0;
+  transition: 1s ease;
 }

@@ -38,7 +38,7 @@
   height: 19.688rem;
   font-family: var(--montserrat-font-family);
   opacity: 100%;
-  transition: opacity 0.5s 0.2s;
+  transition: opacity 0.5s 0.1s;
 }
 
 .imageWrap {
@@ -68,7 +68,7 @@
   font-weight: normal;
 }
 
-.productInfoBox > p {
+.productInfoBox > p:first-of-type {
   display: none;
 }
 
@@ -76,6 +76,11 @@
   display: none;
 }
 
+.productInfoBox > .closeBtn {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
 /* ***** STYLES FOR SELECTED PRODUCT ***** */
 
@@ -104,11 +109,28 @@
   justify-content: center;
   justify-items: center;
   overflow-y: hidden;
+  position: relative;
 }
 
-.card.selected > .productInfoBox > p {
+.card.selected > .productInfoBox > p:first-of-type {
   display: block;
   width: 15.625rem;
+}
+
+.card.selected > .productInfoBox > button {
+  display: block;
+}
+
+.card.selected > .productInfoBox > .closeBtn {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  opacity: 100%;
+  transition: 1s 2s;
+  width: fit-content;
+  height: fit-content;
 }
 
 /* ***** STYLES FOR HIDDEN PRODUCTS ***** */

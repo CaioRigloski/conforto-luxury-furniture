@@ -8,6 +8,8 @@ import homeBackground from "../../public/images/home/home-background.jpg"
 import MidText from "@/components/home/MidText";
 import SideBanner from "@/components/home/SideBanner";
 import Catalog from "@/components/catalog/Catalog";
+import Products from "@/components/products/Products";
+import About from "@/components/about/About";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 const antic = Antic_Didone({ weight: "400", subsets: ["latin"] });
@@ -30,6 +32,8 @@ export default function Home() {
           <SideBanner/>
         </section>
         <Catalog/>
+        <About/>
+        <Products category="chairs"/>
       </main>
     </>
   );
