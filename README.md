@@ -20,7 +20,7 @@ Designed with figma and built with Next.js, it uses /pages router, Typescript fo
 To store the products data a MySQL schema with a single table is used:
 ```
 CREATE TABLE product (
-	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
     description VARCHAR(500) NOT NULL,
     category VARCHAR (255) NOT NULL,
