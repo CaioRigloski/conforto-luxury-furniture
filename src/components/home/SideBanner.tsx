@@ -24,9 +24,9 @@ export default function SideBanner() {
           </div>
         </div>
         <div>
-          <p>Lightning</p>
+          <p>lighting</p>
           <div className={styles.icon}>
-            <Image src={lampSvg} alt="Lightning" fill/>
+            <Image src={lampSvg} alt="lighting" fill/>
           </div>
         </div>
         <div>

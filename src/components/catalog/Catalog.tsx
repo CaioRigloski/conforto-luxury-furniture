@@ -1,7 +1,7 @@
 import styles from "./Catalog.module.css"
 import PageTitle from "../(common)/PageTitle";
 
-import lightningImage from "../../../public/images/catalog/lightning.png"
+import lightingImage from "../../../public/images/catalog/lighting.png"
 import chairsImage from "../../../public/images/catalog/chair.png"
 import cabinetsImage from "../../../public/images/catalog/cabinet.png"
 import bedsImage from "../../../public/images/catalog/bed.png"
@@ -14,8 +14,8 @@ export default function Catalog() {
 
   const options = [
     {
-      text: "lightning",
-      image: lightningImage
+      text: "lighting",
+      image: lightingImage
     },
     {
       text: "chairs",

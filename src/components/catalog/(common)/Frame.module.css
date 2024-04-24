@@ -2,8 +2,8 @@
 
 .container {
   /* Variables */
-  --lightning-width: 13.75rem;
-  --lightning-height: 15.688rem;
+  --lighting-width: 13.75rem;
+  --lighting-height: 15.688rem;
   --chairs-width: 25.313rem;
   --chairs-height: 28.438rem;
   --cabinets-width: 20rem;
@@ -39,16 +39,16 @@
 
 /* STYLES FOR CONTAINER FOR EACH CATEGORY  */
 
-/* Lightning */
-.container.lightning {
-  grid-area: lightning;
-  width: var(--lightning-width);
-  height: var(--lightning-height);
+/* lighting */
+.container.lighting {
+  grid-area: lighting;
+  width: var(--lighting-width);
+  height: var(--lighting-height);
 }
 
-.container.lightning > div {
-  width: calc(var(--lightning-width) - 0.438rem);
-  height: calc(var(--lightning-height) - 0.438rem);
+.container.lighting > div {
+  width: calc(var(--lighting-width) - 0.438rem);
+  height: calc(var(--lighting-height) - 0.438rem);
 }
 
 /* Chairs */
@@ -113,7 +113,7 @@
   object-fit: contain;
 }
 
-.container.lightning > div > .imageWrap {
+.container.lighting > div > .imageWrap {
   width: 8.938rem;
   height: 8.938rem;
 }

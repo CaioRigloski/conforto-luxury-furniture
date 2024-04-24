@@ -36,7 +36,7 @@
   position: absolute;
 }
 
-.catalog.lightning, .catalog.beds {
+.catalog.lighting, .catalog.beds {
   top: var(--absolute-margin);
   left: var(--absolute-margin);
 }

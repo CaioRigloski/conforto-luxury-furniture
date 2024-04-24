@@ -1,0 +1,14 @@
+@keyframes changeBackground {
+  from {
+    background-color: var(--background-transparent-white);
+  }
+  to {
+    background-color: var(--background-dark-blue);
+  }
+}
+
+.loadingCard {
+  width: 15.625rem;
+  height: 19.688rem;
+  animation: changeBackground 1s alternate infinite;
+}

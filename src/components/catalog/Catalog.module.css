@@ -1,8 +1,8 @@
 .catalogSection {
   display: grid;
   grid-template-areas: 
-    "lightning chairs cabinets"
-    "lightning chairs tables"
+    "lighting chairs cabinets"
+    "lighting chairs tables"
     "beds beds tables"
     "beds beds tables"
   ;

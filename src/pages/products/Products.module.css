@@ -130,3 +130,18 @@
 .productsSection.productIsSelected.productIsClosed > .background {
   animation: setBackgroundToDefault 1s ease normal;
 }
+
+.error {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+  color: black;
+  background-color: white;
+  padding: 1rem;
+  text-align: center;
+}
