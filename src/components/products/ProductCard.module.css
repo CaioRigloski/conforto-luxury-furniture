@@ -39,6 +39,7 @@
   font-family: var(--montserrat-font-family);
   opacity: 100%;
   transition: opacity 0.5s 0.1s;
+  cursor: pointer;
 }
 
 .imageWrap {
@@ -86,6 +87,7 @@
 
 .card.selected {
   animation: resize 0s calc(var(--delayAnimation) + 1s) forwards;
+  cursor: auto;
 }
 
 /* Odd index (right column items) must be centered until display set to inline-flex to prevent flickering*/

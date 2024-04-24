@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { PrismaClient, Product } from '@prisma/client'
+import { PrismaClient, product } from '@prisma/client'
 import ErrorResponse from "@/interfaces/ErrorResponse.interface";
 
 const prisma = new PrismaClient()
@@ -10,9 +10,9 @@ export const config = {
   }
 }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse<Product[] | ErrorResponse>) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse<product[] | ErrorResponse>) {
   try {
-    const products: Product[] =  await prisma.product.findMany({
+    const products: product[] =  await prisma.product.findMany({
       where: {
         category: req.query.category as string
       }
