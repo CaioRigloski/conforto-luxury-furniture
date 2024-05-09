@@ -137,3 +137,20 @@
   width: 23.063rem;
   height: 12.875rem;
 }
+
+@media (max-width: 768px) {
+  .container {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .container > div {
+    width: 48vw !important;
+    height: -webkit-fill-available !important;
+  }
+
+  .container.beds > div {
+    width: 98vw !important;
+    height: calc(var(--beds-height) - 0.438rem) !important;
+  }
+}

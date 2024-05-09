@@ -53,3 +53,9 @@
   position: relative;
   bottom: 5.125rem;
 }
+
+@media (max-width: 768px) {
+  .container {
+    display: none;
+  }
+}

@@ -14,3 +14,16 @@
   position: relative;
   background-color: var(--background-light-blue);
 }
+
+@media (max-width: 768px) {
+  .catalogSection {
+    grid-template-areas:
+      "title title"
+      "lighting cabinets"
+      "chairs cabinets"
+      "chairs tables"
+      "beds beds"
+    ;
+    gap: 0.5rem;
+  }
+}

@@ -11,12 +11,35 @@ import Catalog from "@/components/catalog/Catalog";
 import About from "@/components/about/About";
 import { LegacyRef, useCallback, useEffect, useRef, useState } from "react";
 import Router from "next/router";
+import MobileTouch from "@/components/home/MobileTouch";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 const antic = Antic_Didone({ weight: "400", subsets: ["latin"] });
 
 
 export default function Home() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  function handleScroll() {
+    // if statement prevents the <MobileTouch/> from appearing again
+    if(scrollPosition === 0) {
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  
+      const windowScroll = document.documentElement.scrollTop;
+  
+      const scrolled = (windowScroll / height) * 100;
+  
+      setScrollPosition(scrolled);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+
   return (
     <>
       <Head>
@@ -31,6 +54,7 @@ export default function Home() {
         <section className={styles.homeSection} id="home">
           <MidText/>
           <SideBanner/>
+          {scrollPosition === 0 && <MobileTouch/>}
         </section>
         <Catalog/>
         <About/>

@@ -48,3 +48,29 @@
   top: 3rem !important;
   left: 0.7rem !important;
 }
+
+@media (max-width: 768px) {
+  .container {
+    bottom: 10rem;
+    width: calc(14.246rem + 1.313rem);
+  }
+
+  .container > h1 {
+    font-size: 3rem;
+  }
+
+  .imageWrap {
+    position: relative;
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  .imageWrap:first-of-type > img {
+    top: 2.5rem !important;
+  }
+  
+  .imageWrap:last-of-type > img {
+    top: 2.2rem !important;
+    left: 0.6rem !important;
+  }
+}

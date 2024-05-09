@@ -21,3 +21,16 @@
   opacity: 0;
   transition: 1s ease;
 }
+
+@media (max-width: 768px) {
+  .container {
+    grid-area: title;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 4rem;
+  }
+}
