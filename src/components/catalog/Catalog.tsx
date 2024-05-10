@@ -38,11 +38,13 @@ export default function Catalog() {
   return (
     <section className={styles.catalogSection} id="catalog">
       <PageTitle title="catalog"/>
-      {
-        options.map((option, index) => {
-          return <Frame key={index} title={option.text} imageSrc={option.image} styleName={option.text}/>
-        })
-      }
+      <div className={styles.catalogBox}>
+        {
+          options.map((option, index) => {
+            return <Frame key={index} title={option.text} imageSrc={option.image} styleName={option.text}/>
+          })
+        }
+      </div>
     </section>
   )
 }

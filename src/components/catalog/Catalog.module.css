@@ -1,29 +1,47 @@
 .catalogSection {
   display: grid;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-light-blue);
+  position: relative;
+}
+
+.catalogBox {
+  display: grid;
   grid-template-areas: 
-    "lighting chairs cabinets"
-    "lighting chairs tables"
-    "beds beds tables"
-    "beds beds tables"
+  "lighting chairs cabinets"
+  "lighting chairs tables"
+  "beds beds tables"
+  "beds beds tables"
   ;
   align-items: center;
   align-content: center;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
   position: relative;
-  background-color: var(--background-light-blue);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 320px) and (max-width: 991px) {
   .catalogSection {
+    display: block;
+  }
+  .catalogBox {
     grid-template-areas:
-      "title title"
-      "lighting cabinets"
-      "chairs cabinets"
-      "chairs tables"
-      "beds beds"
+    "lighting cabinets"
+    "chairs cabinets"
+    "chairs tables"
+    "beds beds"
     ;
+    height: 90vh;
     gap: 0.5rem;
   }
+}
+
+@media (max-height: 768px) {
+ .catalogBox {
+  grid-template-areas:
+    "lighting cabinets"
+    "chairs tables"
+    "beds beds"
+  ;
+ } 
 }
