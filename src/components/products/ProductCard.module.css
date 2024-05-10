@@ -162,3 +162,28 @@
   opacity: 0;
   transition: 0.5s;
 }
+
+@media (max-width: 768px) {
+  .card.selected, .card.selected.isOdd, .card.selected > .productInfoBox{
+    animation: none;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .card.selected > .imageWrap {
+    width: 100vw;
+    height: 50vh;
+    transition: ease 1s 0.5s;
+  }
+  
+  .card.selected > .productInfoBox {
+    width: 100vw;
+    height: 50vh;
+    background-color: var(--background-light-blue);
+    transition: ease 1s 0.5s;
+  }
+
+  .card.hidden {
+    display: none;
+  }
+}

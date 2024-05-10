@@ -88,7 +88,7 @@ export default function Products({category, products, error}: InferGetServerSide
               })
             }
           </div>
-          { displayScrollDown && products && products.length > 4  && <Image src={scrollDown} alt="Scroll Down Icon"/> }
+          { displayScrollDown && products && products.length > 4  && <Image src={scrollDown} alt="Scroll Down Icon" className={styles.scrollIcon}/> }
         </div>
       }
     </section>

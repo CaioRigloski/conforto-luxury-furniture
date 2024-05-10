@@ -54,3 +54,27 @@
 .chairImageWrap > img, .lusterImageWrap > img {
   object-fit: fill;
 }
+
+@media (max-width: 768px) {
+  .aboutSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .aboutSection::after {
+    display: none;
+  }
+
+  .column {
+    width: 90vw;
+  }
+
+  .column > .chairImageWrap {
+    display: none;
+  }
+
+  .column > .lusterImageWrap {
+    align-self: center;
+  }
+}

@@ -145,3 +145,27 @@
   padding: 1rem;
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .productBox {
+    grid-template-columns: 1fr;
+    width: 100vw;
+    justify-items: center;
+  }
+
+  .productsSection > .productsContainer > .productBox.expandProductBox {
+    width: 100vw;
+    height: 100vh;
+    justify-content: unset;
+    align-content: unset;
+    align-items: unset;
+    row-gap: 0;
+    column-gap: 0;
+    overflow-y: visible;
+    transition: 1s ease 0.5s;
+  }
+
+  .scrollIcon {
+    display: none;
+  }
+}
