@@ -15,7 +15,7 @@ export const getServerSideProps = (async (context) => {
     category: category,
   }
   
-  const response = await fetch(`http://localhost:3000/api/products/get-products?` + new URLSearchParams({
+  const response = await fetch(`http://https://conforto-luxury-furniture.vercel.app/api/products/get-products?` + new URLSearchParams({
     category: category
   }))
   
