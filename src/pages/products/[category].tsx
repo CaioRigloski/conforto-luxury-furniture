@@ -1,6 +1,6 @@
 
-import { ReactNode, useEffect, useRef, useState } from "react";
-import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
+import { useEffect, useRef, useState } from "react";
+import type { InferGetStaticPropsType, GetStaticProps, GetStaticPaths } from 'next'
 import ProductCard from "@/components/products/ProductCard";
 import styles from "./Products.module.css"
 import PageTitle from "@/components/(common)/PageTitle";
@@ -8,14 +8,21 @@ import scrollDown from "../../../public/svg/scroll-down.svg"
 import Image from "next/image";
 import ProductsPageProps from "@/interfaces/ProductPageProps.interface";
 
-export const getServerSideProps = (async (context) => {
-  const category = context.query.category as string
+export const getStaticPaths = (async () => {
+  return {
+    paths: [],
+    fallback: 'blocking'
+  }
+}) satisfies GetStaticPaths
+
+export const getStaticProps = (async (context) => {
+  const category = context.params?.category as string
 
   const props: ProductsPageProps = {
     category: category,
   }
   
-  const response = await fetch(`http://https://conforto-luxury-furniture.vercel.app/api/products/get-products?` + new URLSearchParams({
+  const response = await fetch(`http://localhost:3000/api/products/get-products?` + new URLSearchParams({
     category: category
   }))
   
@@ -26,9 +33,9 @@ export const getServerSideProps = (async (context) => {
   }
 
   return { props }
-}) satisfies GetServerSideProps<ProductsPageProps>
+}) satisfies GetStaticProps<ProductsPageProps>
 
-export default function Products({category, products, error}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Products({category, products, error}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [ selectedProductIndex, setSelectedProductIndex ] = useState<number>(-1)
   const [ closedProductIndex, setClosedProductIndex ] = useState<number>(-1)
   const [ displayScrollDown, setDisplayScrollDown ] = useState<boolean>(true)
