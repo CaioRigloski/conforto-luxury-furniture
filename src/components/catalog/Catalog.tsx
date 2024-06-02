@@ -9,7 +9,6 @@ import tablesImage from "../../../public/images/catalog/table.png"
 import Frame from "./(common)/Frame";
 
 
-
 export default function Catalog() {
 
   const options = [

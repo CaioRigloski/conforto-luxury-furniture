@@ -7,7 +7,7 @@ export default function Frame(props: { title: string, imageSrc: StaticImageData,
   const { push } = useRouter()
 
   return (
-    <div className={`${styles.container} ${styles[props.styleName]}`} onClick={() => push(`/products/${props.title}`)}>
+    <div className={`${styles.container} ${styles[props.styleName]}`} onClick={() => push(`http://${process.env.VERCEL_URL}/products/${props.title}`)}>
       <div>
         <div className={styles.imageWrap}>
           <Image src={props.imageSrc} alt={props.title} fill/>
